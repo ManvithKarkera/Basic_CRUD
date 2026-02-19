@@ -157,7 +157,7 @@ APIException (base)
 - Edge cases: nonexistent todos, completed task modifications
 - Database consistency: state verification after operations
 
-**45+ Tests** organized by concern:
+**30+ Tests** organized by concern:
 - `TestTodoCreation`: Creation and initial state
 - `TestTodoRetrieval`: Fetching todos
 - `TestTodoUpdate`: Basic updates
@@ -419,4 +419,4 @@ curl -X PUT http://127.0.0.1:5000/todos/1 \
 
 ---
 
-**Last Updated**: February 19, 2026
+

@@ -146,45 +146,6 @@ logging.info(
 - Logging full request bodies
 - Debug logging in production code paths
 
-## AI-Assisted Development Rules
-
-### RULE: AI Code Must Be Reviewed
-
-**REQUIRED** before merging AI-generated code:
-1. Read and understand every line
-2. Verify business logic correctness
-3. Check for security issues
-4. Run full test suite
-5. Test manually if UI changes
-
-**FORBIDDEN**:
-- Merging AI code without review
-- Assuming AI output is correct
-- Blindly accepting refactoring suggestions
-
-### RULE: Simplicity Over Cleverness
-
-**PREFERRED**:
-- Simple, obvious implementations
-- Clear function names and purposes
-- Straightforward control flow
-
-**AVOID**:
-- Overly generic abstractions
-- Premature optimization
-- Clever one-liners that obscure intent
-
-**Example**:
-```python
-# PREFERRED - Simple and clear
-def is_completed(todo):
-    return todo.status == 'DONE'
-
-# AVOID - Overly clever
-def check_state(entity, evaluator=lambda x: x.status == 'DONE'):
-    return evaluator(entity)
-```
-
 ### RULE: Test Before Implementation
 
 **PROCESS**:
@@ -263,67 +224,6 @@ backend/
 - Comments for obvious code
 - Paraphrasing code in comments
 
-## Change Management
-
-### RULE: Version Control Hygiene
-
-**REQUIRED**:
-- Commit after each complete feature
-- Write descriptive commit messages
-- One logical change per commit
-
-**Example Commit Messages**:
-- "Add status field to Todo model"
-- "Implement state transition validation"
-- "Centralize error handling with custom exceptions"
-
-### RULE: Incremental Changes
-
-**PREFERRED**:
-- Small, incremental changes
-- One layer at a time
-- Test after each change
-
-**AVOID**:
-- Large, multi-layer refactorings
-- Changing multiple concerns simultaneously
-- Breaking working code without tests
-
-## AI Tool Usage Guidelines
-
-### When to Use AI
-
-**GOOD USE CASES**:
-- Generating boilerplate (fixtures, models)
-- Suggesting function signatures
-- Generating test cases
-- Refactoring code structure
-- Explaining unfamiliar patterns
-- Generating documentation
-
-**POOR USE CASES**:
-- Critical security code (authentication, authorization)
-- Performance-critical algorithms without validation
-- Complex business logic without review
-- Database migration scripts without testing
-
-### How to Use AI Effectively
-
-**PROCESS**:
-1. Clearly describe requirements
-2. Specify constraints and boundaries
-3. Review generated code immediately
-4. Test generated code thoroughly
-5. Refactor AI output for clarity
-6. Document significant AI suggestions
-
-**RED FLAGS** (review extra carefully):
-- AI generates code in wrong layer
-- AI suggests skipping validation
-- AI creates deeply nested logic
-- AI uses deprecated patterns
-- AI ignores existing conventions
-
 ## Security Requirements
 
 ### RULE: No Security Shortcuts
@@ -374,4 +274,3 @@ All AI-generated code must comply with these rules. When in doubt, prefer simpli
 
 ---
 
-**Last Updated**: February 19, 2026
