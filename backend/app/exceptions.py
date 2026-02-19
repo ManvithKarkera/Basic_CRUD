@@ -17,6 +17,10 @@ class APIException(Exception):
             self.status_code = status_code
         self.payload = payload
     
+    def __str__(self):
+        """Return the error message when converting to string."""
+        return self.message
+    
     def to_dict(self):
         """Convert exception to dictionary for JSON response."""
         rv = {'error': self.message}
