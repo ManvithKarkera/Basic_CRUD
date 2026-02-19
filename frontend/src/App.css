@@ -227,22 +227,28 @@ button:disabled {
   font-size: 13px;
 }
 
+.transition-button:hover:not(:disabled) {
+  background-color: #333333;
+}
+
 .transition-button.transition-in_progress {
-  background-color: #64b5f6;
-  color: white;
+  background-color: rgba(100, 181, 246, 0.3);
+  color: #0d47a1;
 }
 
 .transition-button.transition-in_progress:hover:not(:disabled) {
-  background-color: #42a5f5;
+  background-color: rgba(100, 181, 246, 0.5);
+  color: #0d47a1;
 }
 
 .transition-button.transition-done {
-  background-color: #81c784;
-  color: white;
+  background-color: rgba(129, 199, 132, 0.3);
+  color: #1b5e20;
 }
 
 .transition-button.transition-done:hover:not(:disabled) {
-  background-color: #66bb6a;
+  background-color: rgba(129, 199, 132, 0.5);
+  color: #1b5e20;
 }
 
 .delete-button {
