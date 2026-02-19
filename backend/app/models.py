@@ -3,6 +3,7 @@ from typing import Dict, Any
 from app.extensions import db
 
 
+
 class Todo(db.Model):
     sno = db.Column(db.Integer, primary_key=True) 
     title = db.Column(db.String(200), nullable=False)

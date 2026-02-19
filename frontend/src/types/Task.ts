@@ -17,11 +17,13 @@ export interface Task {
 
 export interface CreateTaskRequest {
   title: string;
+  desc?: string;
   status?: TaskStatus;
 }
 
 export interface UpdateTaskRequest {
   title?: string;
+  desc?: string;
   status?: TaskStatus;
 }
 

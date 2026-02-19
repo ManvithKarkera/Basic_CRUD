@@ -8,6 +8,7 @@ interface CreateTaskProps {
 
 export const CreateTask: React.FC<CreateTaskProps> = ({ onTaskCreated }) => {
   const [title, setTitle] = useState('');
+  const [desc, setDesc] = useState('');
   const [status, setStatus] = useState<TaskStatus>(TaskStatus.TODO);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -24,8 +25,9 @@ export const CreateTask: React.FC<CreateTaskProps> = ({ onTaskCreated }) => {
     setError(null);
 
     try {
-      await todoApi.createTodo({ title: title.trim(), status });
+      await todoApi.createTodo({ title: title.trim(), desc: desc.trim(), status });
       setTitle('');
+      setDesc('');
       setStatus(TaskStatus.TODO);
       onTaskCreated();
     } catch (err) {
@@ -48,6 +50,18 @@ export const CreateTask: React.FC<CreateTaskProps> = ({ onTaskCreated }) => {
             onChange={(e) => setTitle(e.target.value)}
             disabled={isSubmitting}
             placeholder="Enter task title"
+          />
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="desc">Description:</label>
+          <textarea
+            id="desc"
+            value={desc}
+            onChange={(e) => setDesc(e.target.value)}
+            disabled={isSubmitting}
+            placeholder="Enter task description (optional)"
+            rows={3}
           />
         </div>
 

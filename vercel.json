@@ -1,0 +1,25 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "backend/wsgi.py",
+      "use": "@vercel/python",
+      "config": {
+        "maxLambdaSize": "15mb"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/todos(.*)",
+      "dest": "backend/wsgi.py"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "backend/wsgi.py"
+    }
+  ],
+  "env": {
+    "FLASK_ENV": "production"
+  }
+}
